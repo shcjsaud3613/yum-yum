@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.omnyom.yumyum">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-feature
+        android:name="android.hardware.camera2"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.any"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+
+    <queries>
+        <package android:name="com.kakao.talk" />
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_quokka"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@drawable/ic_quokka"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.YumYum"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ui.search.SearchSingleFeedActivity"></activity>
+        <activity android:name=".ui.search.SinglePlaceActivity"></activity>
+        <activity android:name=".ui.eureka.EurekaSingleFeedActivity" />
+        <activity android:name=".ui.useroption.EurekaOptionActivity" />
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- <meta-data -->
+        <!-- android:name="com.kakao.sdk.AppKey" -->
+        <!-- android:value="a48ac35487722b760df861b584827760" /> -->
+        <activity android:name=".ui.myinfo.SelectedAllActivity" />
+        <activity android:name=".ui.markermap.MarkerMapActivity" />
+        <activity android:name=".ui.userfeed.UserFeedActivity" />
+        <activity android:name=".ui.useroption.UserInfoEditActivity" />
+        <activity android:name=".ui.useroption.MyOptionActivity" />
+        <activity
+            android:name=".ui.feed.SearchPlaceActivity"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity android:name=".ui.feed.MapActivity" />
+        <activity
+            android:name=".ui.feed.FeedCreateActivity"
+            android:screenOrientation="portrait" />
+        <!--
+               Set to true if your app is Standalone, that is, it does not require the handheld
+               app to run.
+        -->
+        <activity
+            android:name=".ui.signup.SignUpActivity"
+            android:label="@string/title_activity_sign_up"
+            android:screenOrientation="portrait" />
+        <!--
+               Set to true if your app is Standalone, that is, it does not require the handheld
+               app to run.
+        -->
+        <activity
+            android:name=".ui.feed.CameraActivity"
+            android:label="@string/title_activity_camera"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="@string/kakaolink_host"
+                    android:scheme="@string/kakao_scheme" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="@string/kakao_app_key" />
+
+        <service android:name=".helper.notification.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

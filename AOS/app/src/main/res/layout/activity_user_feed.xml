@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="vm"
+            type="com.omnyom.yumyum.ui.userfeed.UserFeedViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        tools:context=".ui.userfeed.UserFeedActivity">
+
+        <View
+            android:id="@+id/line6"
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:layout_marginTop="25dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@+id/iv_avatar"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="AshOil"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_avatar"
+            app:layout_constraintTop_toTopOf="@+id/iv_avatar" />
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="25dp"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_user" />
+
+        <TextView
+            android:id="@+id/tv_introduction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="감자탕과 뼈해장국"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_avatar"
+            app:layout_constraintEnd_toEndOf="@+id/tv_username"
+            app:layout_constraintStart_toStartOf="@+id/tv_username"
+            app:layout_constraintTop_toBottomOf="@+id/tv_username" />
+
+        <TextView
+            android:id="@+id/tv_all_feed_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="유저 피드"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line6" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_all_feed_author"
+            tools:context=".ui.myinfo.MyFeedFragment">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_author_feed"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

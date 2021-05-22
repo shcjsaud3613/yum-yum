@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.search.SinglePlaceActivity">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_single_plce_info"
+        android:layout_width="0dp"
+        android:layout_height="155dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/place_info_tab"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+      <TextView
+          android:id="@+id/tv_single_place_name"
+          android:layout_width="280dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="8dp"
+          android:ellipsize="end"
+          android:maxLines="1"
+          android:text="식당명"
+          android:textSize="30sp"
+          app:layout_constraintBottom_toBottomOf="@+id/imageView"
+          app:layout_constraintStart_toEndOf="@+id/imageView"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+      <TextView
+          android:id="@+id/tv_single_place_address"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="16dp"
+          android:text="등록된 주소가 없어요 ㅠ.ㅠ"
+          app:layout_constraintStart_toEndOf="@+id/imageView2"
+          app:layout_constraintTop_toBottomOf="@+id/tv_single_place_name" />
+
+      <TextView
+          android:id="@+id/tv_single_place_phone"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="10dp"
+          android:layout_marginTop="15dp"
+          android:text="등록된 전화번호가 없어요 ㅠ.ㅠ"
+          app:layout_constraintStart_toEndOf="@+id/imageView3"
+          app:layout_constraintTop_toBottomOf="@+id/tv_single_place_address" />
+
+      <ImageView
+          android:id="@+id/imageView"
+          android:layout_width="47dp"
+          android:layout_height="44dp"
+          android:layout_marginStart="18dp"
+          android:layout_marginTop="20dp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:srcCompat="@drawable/ic_spoon" />
+
+      <ImageView
+          android:id="@+id/imageView2"
+          android:layout_width="25dp"
+          android:layout_height="25dp"
+          app:layout_constraintBottom_toBottomOf="@+id/tv_single_place_address"
+          app:layout_constraintStart_toStartOf="@id/imageView"
+          app:layout_constraintTop_toTopOf="@+id/tv_single_place_address"
+          app:srcCompat="@drawable/ic_location" />
+
+      <ImageView
+          android:id="@+id/imageView3"
+          android:layout_width="20dp"
+          android:layout_height="20dp"
+          android:layout_marginTop="15dp"
+          app:layout_constraintEnd_toEndOf="@+id/imageView2"
+          app:layout_constraintStart_toStartOf="@+id/imageView2"
+          app:layout_constraintTop_toBottomOf="@+id/imageView2"
+          app:srcCompat="@drawable/ic_phone_sign" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_single_plce_info">
+
+      <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/rv_place_feed"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

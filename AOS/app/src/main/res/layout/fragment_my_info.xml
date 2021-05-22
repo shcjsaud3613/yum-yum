@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="vm"
+            type="com.omnyom.yumyum.ui.myinfo.MyInfoViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        tools:context=".ui.myinfo.MyInfoFragment"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/line6"
+            android:layout_width="match_parent"
+            android:layout_height="0.7dp"
+            android:layout_marginTop="25dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@+id/iv_avatar"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="AshOil"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_go_options"
+            app:layout_constraintStart_toEndOf="@+id/iv_avatar"
+            app:layout_constraintTop_toTopOf="@+id/iv_avatar" />
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="25dp"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_user" />
+
+        <TextView
+            android:id="@+id/tv_introduction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="감자탕과 뼈해장국"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_avatar"
+            app:layout_constraintEnd_toEndOf="@+id/tv_username"
+            app:layout_constraintStart_toStartOf="@+id/tv_username"
+            app:layout_constraintTop_toBottomOf="@+id/tv_username" />
+
+        <fragment
+            android:id="@+id/fragment_inner_tab"
+            android:name="com.omnyom.yumyum.ui.myinfo.InnerTabFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line6"
+            tools:layout="@layout/fragment_inner_tab" />
+
+        <ImageButton
+            android:id="@+id/btn_go_options"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="18dp"
+            android:background="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_threedots"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

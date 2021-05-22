@@ -1,0 +1,59 @@
+{
+  "version": 2,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.omnyom.yumyum",
+  "variantName": "processReleaseResources",
+  "elements": [
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "x86_64"
+        }
+      ],
+      "versionCode": 13,
+      "versionName": "1.3",
+      "outputFile": "app-x86_64-release.apk"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "armeabi-v7a"
+        }
+      ],
+      "versionCode": 13,
+      "versionName": "1.3",
+      "outputFile": "app-armeabi-v7a-release.apk"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "x86"
+        }
+      ],
+      "versionCode": 13,
+      "versionName": "1.3",
+      "outputFile": "app-x86-release.apk"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "armeabi"
+        }
+      ],
+      "versionCode": 13,
+      "versionName": "1.3",
+      "outputFile": "app-armeabi-release.apk"
+    }
+  ]
+}

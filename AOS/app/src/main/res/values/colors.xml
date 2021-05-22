@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F6D705</color>
+    <color name="colorPrimaryDark">#F1C40F</color>
+    <color name="colorAccent">#F9F9F9</color>
+
+    <color name="colorSecondary">#000000</color>
+    <color name="colorSecondaryDark">#e6666e</color>
+
+
+    <!-- Main Text Color -->
+    <color name="mainText">#333333</color> <!--임시-->
+    <color name="colorGray">#DDDDDD</color>
+    <color name="colorLightGray">#F9F9F9</color>
+    <color name="blue">#296DEE</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="skyblue">#DEE9FD</color>
+    <color name="skyblue_80">#80BAF1</color>
+    <color name="gray_3">#333333</color>
+    <color name="gray_6">#666666</color>
+    <color name="gray_9">#999999</color>
+    <color name="gray_f9">#F9F9F9</color>
+    <color name="gray_f5">#F5F5F5</color>
+    <color name="gray_e5">#E5E5E5</color>
+    <color name="coralpink">#e6666e</color>
+    <color name="red">#ff5d29</color>
+    <color name="black">#000000</color>
+    <color name="gray_d">#DDDDDD</color>
+    <color name="orange">#FF9F47</color>
+    <color name="orange_5d">#FF5D29</color>
+    <color name="transparent">@android:color/transparent</color>
+
+    <color name="select_color_yellow">#F8D149</color>
+    <color name="select_color_orange">#FF9F47</color>
+    <color name="select_color_red">#E66662</color>
+    <color name="select_color_light_green">#C0D95C</color>
+    <color name="select_color_green">#4FB684</color>
+    <color name="select_color_green2">#3DB7BF</color>
+    <color name="select_color_blue">#80BAF1</color>
+
+
+
+</resources>

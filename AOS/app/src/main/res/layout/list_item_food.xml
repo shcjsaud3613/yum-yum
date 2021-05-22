@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="feed"
+            type="com.omnyom.yumyum.model.feed.FeedData" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <VideoView
+            android:id="@+id/food_video"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/iv_thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/colorPrimary"
+            android:indeterminateDrawable="@drawable/ic_nut_yellow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/food_video"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.ms.square.android.expandabletextview.ExpandableTextView
+                android:id="@+id/text_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="15dp"
+                android:text="내용"
+                app:animDuration="200"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_goneMarginBottom="5dp"
+                app:maxCollapsedLines="1">
+
+                <TextView
+                    android:id="@id/expandable_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <ImageButton
+                    android:id="@id/expand_collapse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:background="@android:color/transparent"
+                    android:padding="5dp" />
+            </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+            <TextView
+                android:id="@+id/text_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="5dp"
+                android:text="유저이름"
+                android:textColor="#C8C8C8"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toTopOf="@+id/text_name"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/text_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="음식 이름"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toTopOf="@+id/text_placename"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/text_placename"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="15dp"
+                android:text="주소/가게이름"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/text_detail"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btn_send"
+                android:layout_width="31dp"
+                android:layout_height="34dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_send"
+                android:scaleX="0.9"
+                android:scaleY="0.9"
+                android:tint="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/tv_share_info"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/av_thumb_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:scaleX="1.2"
+                android:scaleY="1.2"
+                app:layout_constraintBottom_toTopOf="@id/tv_like_num"
+                app:layout_constraintEnd_toEndOf="@id/btn_send"
+                app:layout_constraintStart_toStartOf="@id/btn_send"
+                app:lottie_colorFilter="@color/white"
+                app:lottie_fileName="ic_thumb_up.json" />
+
+            <TextView
+                android:id="@+id/tv_like_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@id/btn_send"
+                app:layout_constraintEnd_toEndOf="@id/btn_send"
+                app:layout_constraintStart_toStartOf="@id/btn_send" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/av_star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/text_name"
+                app:layout_constraintStart_toEndOf="@+id/text_name"
+                app:layout_constraintTop_toTopOf="@+id/text_name"
+                app:lottie_colorFilter="@color/colorPrimary"
+                app:lottie_fileName="ic_neutral.json" />
+
+            <TextView
+                android:id="@+id/tv_share_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:text="공유"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/btn_send"
+                app:layout_constraintStart_toStartOf="@+id/btn_send" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

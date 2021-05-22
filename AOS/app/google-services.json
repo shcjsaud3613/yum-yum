@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "334733871859",
+    "project_id": "yumyum-52542",
+    "storage_bucket": "yumyum-52542.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:334733871859:android:ac39da9ef8307f57d58586",
+        "android_client_info": {
+          "package_name": "com.omnyom.yumyum"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "334733871859-0vr43ito6lnbp1408brkfh73up549861.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.omnyom.yumyum",
+            "certificate_hash": "0733f50e9fa6f786e1ede366c7251544f49e5828"
+          }
+        },
+        {
+          "client_id": "334733871859-dtqkhk54shpbvpqqu7123jf7v49u2b7q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDL62ryXVmSt8dip0GS-nMYKuavNDr4VE4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "334733871859-dtqkhk54shpbvpqqu7123jf7v49u2b7q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

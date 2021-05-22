@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">YumYum</string>
+    <string name="title_home">홈</string>
+    <string name="title_search">검색</string>
+    <string name="title_write">작성</string>
+    <string name="title_profile">마이페이지</string>
+    <string name="title_sign_up">회원가입</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="feed_page_detail">사장님이 친절한데 페퍼론치노를 너무 좋아하셔서 매워요 ㅠ.ㅠ</string>
+    <string name="title_activity_camera">CameraActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="name">이름</string>
+    <string name="please_write_name">이름을 입력해주세요.</string>
+    <string name="please_write_food_name">무엇을 맛있게 먹을건가요?</string>
+    <string name="please_write_place_name">어디서 먹었나요?</string>
+    <string name="introduction">소개</string>
+    <string name="please_write_introduction">자신을 소개해주세요.</string>
+    <string name="complete">완료</string>
+    <string name="pre_save">임시저장</string>
+    <string name="previous">Previous</string>
+    <string name="title_user_edit">회원 정보 수정</string>
+    <string name="please_search">원하는 피드를 찾아보세요~</string>
+    <string name="not_found">피드 검색 결과가 없어요\nㅠ_ㅠ</string>
+    <string name="preferences">설정 및 개인정보</string>
+    <string name="account">계정</string>
+    <string name="manage_account">계정 관리</string>
+    <string name="information">정보</string>
+    <string name="login">로그인</string>
+    <string name="logout">로그아웃</string>
+    <string name="privacy_policy">개인정보 보호정책</string>
+    <string name="privacy_policy_site">https://week-year.tistory.com/190?category=891710</string>
+
+    <string name="location_hint">식당 이름을 알려주세요.</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="title_my_feed">내 피드</string>
+    <string name="title_like_feed">좋아요한 피드</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+
+    <string name="saved_google_email">google_email_saved</string>
+    <string name="saved_eureka_distance">5</string>
+    <string name="edit">수정</string>
+    <string name="delete">삭제</string>
+    <string name="kakao_app_key">4b26437470764b65d5fe1a130e93346c</string>
+    <string name="kakaolink_host">kakaolink</string>
+    <string name="kakao_scheme">kakao4b26437470764b65d5fe1a130e93346c</string>
+    <string name="kakao_link_template_id">53643</string>
+    <string name="calculating_video">음식 영상을 판별중입니다</string>
+</resources>

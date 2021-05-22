@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="vm"
+            type="com.omnyom.yumyum.ui.feed.FeedCreateViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        tools:context=".ui.feed.FeedCreateActivity">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="피드 등록"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/btn_goBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:text="이전"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:background="@drawable/btn_transparent"
+            android:backgroundTint="@color/transparent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_title"
+            app:layout_constraintBottom_toBottomOf="@id/tv_title"/>
+
+        <TextView
+            android:id="@+id/btn_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="28dp"
+            android:background="@color/white"
+            android:backgroundTint="@color/white"
+            android:textSize="16sp"
+            android:text="완료"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_title"
+            app:layout_constraintBottom_toBottomOf="@id/tv_title" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_layout_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:layout_marginHorizontal="24dp"
+            android:hint="@string/please_write_food_name"
+            app:boxBackgroundColor="@android:color/transparent"
+            android:background="@android:color/transparent"
+            app:counterEnabled="true"
+            app:counterMaxLength="10"
+            app:errorEnabled="true"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={vm.title}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_recommend_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginHorizontal="12dp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_layout_title"/>
+
+        <TextView
+            android:id="@+id/tv_calculating_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/calculating_video"
+            android:textAlignment="center"
+            android:textColor="@color/mainText"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/input_layout_title"
+            app:layout_constraintEnd_toEndOf="@id/input_layout_title"
+            app:layout_constraintTop_toTopOf="@id/rv_recommend_title"
+            app:layout_constraintBottom_toBottomOf="@id/rv_recommend_title"/>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/av_dots_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            app:layout_constraintStart_toEndOf="@id/tv_calculating_video"
+            app:layout_constraintTop_toTopOf="@id/tv_calculating_video"
+            app:layout_constraintBottom_toBottomOf="@id/tv_calculating_video"
+            app:lottie_fileName="ic_dots_loading.json" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/calculating_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="tv_calculating_video,av_dots_loading" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/av_star_1"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginHorizontal="8dp"
+            app:layout_constraintEnd_toStartOf="@id/av_star_2"
+            app:layout_constraintTop_toTopOf="@id/av_star_3"
+            app:lottie_colorFilter="@color/black"
+            app:lottie_fileName="ic_vomited.json" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/av_star_2"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginHorizontal="8dp"
+            app:layout_constraintEnd_toStartOf="@id/av_star_3"
+            app:layout_constraintTop_toTopOf="@id/av_star_3"
+            app:lottie_colorFilter="@color/black"
+            app:lottie_fileName="ic_confused.json" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/av_star_3"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginHorizontal="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_recommend_title"
+            app:lottie_colorFilter="@color/black"
+            app:lottie_fileName="ic_neutral.json" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/av_star_4"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginHorizontal="8dp"
+            app:layout_constraintStart_toEndOf="@id/av_star_3"
+            app:layout_constraintTop_toTopOf="@id/av_star_3"
+            app:lottie_colorFilter="@color/black"
+            app:lottie_fileName="ic_lol.json" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/av_star_5"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginHorizontal="8dp"
+            android:tint="@color/colorPrimary"
+            app:layout_constraintStart_toEndOf="@id/av_star_4"
+            app:layout_constraintTop_toTopOf="@id/av_star_3"
+            app:lottie_colorFilter="@color/black"
+            app:lottie_fileName="ic_inloveface.json" />
+
+        <TextView
+            android:id="@+id/tv_star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="별점을 입력해주세요~"
+            android:textSize="22sp"
+            android:textColor="@color/mainText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/av_star_3" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_layout_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:hint="어떠셨나요?"
+            app:boxBackgroundColor="@android:color/transparent"
+            android:background="@android:color/transparent"
+            app:counterEnabled="true"
+            app:counterMaxLength="100"
+            app:errorEnabled="true"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_star">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={vm.content}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_layout_place"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginHorizontal="24dp"
+            android:hint="@string/please_write_place_name"
+            app:boxBackgroundColor="@android:color/transparent"
+            android:background="@android:color/transparent"
+            app:hintEnabled="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_layout_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_place"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_recommend_place"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginHorizontal="12dp"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_layout_place"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

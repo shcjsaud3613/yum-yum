@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="vm"
+            type="com.omnyom.yumyum.ui.feed.SearchPlaceViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.feed.SearchPlaceActivity">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:iconifiedByDefault="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:queryHint="검색어를 입력하시오" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_place"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_view" />
+
+        <ImageView
+            android:id="@+id/iv_search"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginBottom="140dp"
+            android:src="@drawable/illust_search_02"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/search_view" />
+
+        <TextView
+            android:id="@+id/tv_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="식당 이름을 입력하세요~"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="@id/iv_search"
+            app:layout_constraintStart_toStartOf="@id/iv_search"
+            app:layout_constraintTop_toBottomOf="@id/iv_search" />
+
+        <ImageView
+            android:id="@+id/iv_not_found"
+            android:layout_width="match_parent"
+            android:layout_height="310dp"
+            android:layout_marginBottom="140dp"
+            android:src="@drawable/illust_not_found"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_not_found"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/not_found"
+            android:textAlignment="center"
+            android:textSize="22sp"
+            android:textColor="@color/black"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="@id/iv_search"
+            app:layout_constraintEnd_toEndOf="@id/iv_search"
+            app:layout_constraintTop_toBottomOf="@id/iv_search" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

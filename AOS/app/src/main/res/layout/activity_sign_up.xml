@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="vm"
+            type="com.omnyom.yumyum.ui.signup.SignUpViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="?attr/actionBarSize">
+
+        <TextView
+            android:id="@+id/tv_sign_up_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/title_sign_up"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sign_up_title_size"/>
+
+        <ImageButton
+            android:id="@+id/btn_add_profile"
+            android:layout_width="120dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toBottomOf="@id/tv_sign_up_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/border_line_black"
+            android:src="@drawable/ic_user_gray"/>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="@dimen/text_input_height"
+            android:layout_height="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_add_profile"
+            android:layout_marginTop="32dp"
+            android:layout_marginLeft="12dp"
+            android:gravity="bottom|center_horizontal"
+            android:textSize="@dimen/sign_up_font_size"
+            android:text="@string/name"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/tv_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_name"
+            android:layout_marginRight="24dp"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="@={vm.name}"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_introduction"
+            android:layout_width="@dimen/text_input_height"
+            android:layout_height="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_name"
+            android:layout_marginTop="32dp"
+            android:layout_marginLeft="12dp"
+            android:textSize="@dimen/sign_up_font_size"
+            android:gravity="bottom|center_horizontal"
+            android:text="@string/introduction"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout_introduction"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/tv_introduction"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_introduction"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="24dp"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_introduction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="@={vm.introduction}"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_complete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="48dp"
+            android:layout_marginHorizontal="24dp"
+            android:background="@drawable/btn_disabled"
+            android:textColor="@color/white"
+            android:textSize="@dimen/btn_size"
+            android:text="@string/complete"
+            android:enabled="false"
+            android:onClick="@{() -> vm.completeSignUp()}"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
