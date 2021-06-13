@@ -1,6 +1,7 @@
 package com.yumyum.domain.user.api;
 
 import com.yumyum.domain.feed.application.FileService;
+import com.yumyum.domain.feed.application.UploadService;
 import com.yumyum.domain.user.application.*;
 import com.yumyum.domain.user.dao.UserDeleteDao;
 import com.yumyum.domain.user.dao.UserFindDao;
@@ -17,6 +18,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @CrossOrigin(origins = { "*" })
@@ -33,6 +35,7 @@ public class UserController {
     private final UserFollowService userFollowService;
     private final FollowSearchService followSearchService;
     private final FileService fileService;
+    private final UploadService uploadService;
 
     @ApiOperation(value = "회원가입", notes = "이메일, 닉네임, 한줄 소개, 프로필 사진(필수x)을 받아 회원가입한다.")
     @PostMapping("/signup")
@@ -57,8 +60,9 @@ public class UserController {
 
     @ApiOperation(value = "프로필 이미지 업로드", notes = "프로필 이미지를 업로드 후 경로를 반환한다.")
     @PostMapping("/profile")
-    public Object profileUpload(@RequestParam final MultipartFile file) {
-        final String profilePath = fileService.uploadImage(file, "profile/");
+    public Object profileUpload(@RequestParam final MultipartFile file) throws IOException {
+//        final String profilePath = fileService.uploadImage(file, "profile/");
+        final String profilePath = uploadService.uploadImage(file, "profile/");
         return HttpUtils.makeResponse("200", profilePath, "success", HttpStatus.OK);
     }
 

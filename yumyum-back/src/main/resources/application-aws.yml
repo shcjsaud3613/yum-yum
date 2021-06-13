@@ -1,0 +1,11 @@
+cloud:
+  aws:
+    s3:
+      bucket: yumyum-resource
+    region:
+      static: ap-northeast-2
+    stack:
+      auto: false
+    credentials:
+#      AWS CLI에서 aws configure list 정보를 반영할건지 여부
+      instanceProfile: true
