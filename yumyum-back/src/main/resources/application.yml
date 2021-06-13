@@ -3,6 +3,12 @@ server:
   servlet:
     context-path: /yumyum
 spring:
+  profiles:
+    include:
+#      application-aws.yml 가져오기!
+      - aws
+#      application-credentials.yml 가져오기!
+      - credentials
   datasource:
     #    AWS setting:
         driver-class-name: org.mariadb.jdbc.Driver

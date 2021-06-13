@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @CrossOrigin(origins = { "*" })
@@ -25,6 +26,7 @@ public class FeedController {
     private final FeedLikeService feedLikeService;
     private final FeedRecommendService feedRecommendService;
     private final FileService fileService;
+    private final UploadService uploadService;
 
     @ApiOperation(value = "피드 등록", notes = "제목, 내용, 평점, 회원 번호, 장소 번호, 동영상, 썸네일로 피드를 등록한다.")
     @PostMapping("")
@@ -35,8 +37,9 @@ public class FeedController {
 
     @ApiOperation(value = "동영상 및 썸네일 등록", notes = "동영상에서 썸네일을 추출하여 동영상과 함께 저장 후 경로를 반환한다.")
     @PostMapping("/video")
-    public Object uploadVideo(@RequestParam MultipartFile file) {
-        FileDto response = fileService.uploadMedia(file, "media/");
+    public Object uploadVideo(@RequestParam MultipartFile file) throws IOException {
+//        final FileDto response = fileService.uploadMedia(file, "media/");
+        final FileDto response = uploadService.uploadMedia(file, "media/"); // S3 bucket의 static/ 폴더를 지정한 것.
         return HttpUtils.makeResponse("200", response, "success", HttpStatus.OK);
     }
 

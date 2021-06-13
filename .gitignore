@@ -1,4 +1,3 @@
-
 # Created by https://www.toptal.com/developers/gitignore/api/swift,kotlin,java,intellij,vscode,android,xcode,macos,windows,cocoapods
 # Edit at https://www.toptal.com/developers/gitignore?templates=swift,kotlin,java,intellij,vscode,android,xcode,macos,windows,cocoapods
 
@@ -25,6 +24,7 @@ out/
 # Gradle files
 .gradle/
 build/
+application-credentials.yml
 
 # Local configuration file (sdk path, etc)
 local.properties
