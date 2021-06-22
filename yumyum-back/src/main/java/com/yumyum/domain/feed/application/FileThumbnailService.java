@@ -22,7 +22,8 @@ import java.io.IOException;
 public class FileThumbnailService {
 
     private final S3Uploader s3Uploader;
-    private final static String TEMP_FILE_PATH = "src/main/resources/";
+//    private final static String TEMP_FILE_PATH = "src/main/resources/"; // 로컬
+    private final static String TEMP_FILE_PATH = "/home/ubuntu/resources/s3/"; // AWS
 
     public String createThumbnail(final String videoName, final String uploadPath) { // 동영상에서 첫 프레임을 썸네일로 추출 및 저장
         int frameNumber = 0;
