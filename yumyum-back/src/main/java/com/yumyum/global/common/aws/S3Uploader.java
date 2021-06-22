@@ -18,8 +18,10 @@ import java.util.Date;
 @Component // 빈 등록을 위한 어노테이션
 public class S3Uploader implements Uploader {
 
-    private final static String TEMP_FILE_PATH = "src/main/resources/";
-    private final static String S3_PATH = "https://yumyum-resource.s3.ap-northeast-2.amazonaws.com/";
+//    private final static String TEMP_FILE_PATH = "src/main/resources/"; // 로컬
+    private final static String TEMP_FILE_PATH = "/home/ubuntu/resources/s3/"; // AWS
+
+    private final String savePath = "https://yumyum-resource.s3.ap-northeast-2.amazonaws.com/"; // S3 외부 접근 경로
 
     private final AmazonS3Client amazonS3Client;
     private final S3UploadComponent s3UploadComponent;
@@ -39,10 +41,9 @@ public class S3Uploader implements Uploader {
 
     private String putS3(File uploadFile, String dirName, String fileName) {
         amazonS3Client.putObject(new PutObjectRequest(s3UploadComponent.getBucket(), dirName+fileName, uploadFile).withCannedAcl(CannedAccessControlList.PublicRead));
-        String resUrl = amazonS3Client.getUrl(s3UploadComponent.getBucket(), fileName).toString();
-//        return resUrl;
-        String trueUrl = S3_PATH + dirName + resUrl.substring(S3_PATH.length());
-        return trueUrl;
+//        return amazonS3Client.getUrl(s3UploadComponent.getBucket(), fileName).toString();
+        String s3Url = amazonS3Client.getUrl(s3UploadComponent.getBucket(), fileName).toString();
+        return savePath + dirName + s3Url.substring(savePath.length());
     }
 
     public void removeNewFile(File targetFile) {
